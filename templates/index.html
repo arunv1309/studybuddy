@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>StudyBuddy - AI Learning Assistant</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="stylesheet"
+href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Baloo+2:wght@700&display=swap">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+<link rel="stylesheet"
+href="{{ url_for('static',filename='style.css')}}">
+
+</head>
+
+
+<body>
+<button id="toggleSidebar">☰</button>
+
+<div class="container">
+
+
+<div class="sidebar">
+
+  
+
+  
+
+<h2><div class="sb-logo">
+  <svg width="44" height="44" viewBox="0 0 100 100" role="img" aria-label="Study Buddy logo">
+    <path d="M50 30 C 30 28, 12 40, 10 58 C 14 74, 32 80, 50 78 Z" fill="#4C5FD5"/>
+    <path d="M50 30 C 70 28, 88 40, 90 58 C 86 74, 68 80, 50 78 Z" fill="#3848B0"/>
+    <line x1="50" y1="30" x2="50" y2="78" stroke="#1B1B2F" stroke-width="2"/>
+    <circle cx="50" cy="20" r="13" fill="#FFB648"/>
+    <circle cx="45" cy="19" r="1.8" fill="#1B1B2F"/>
+    <circle cx="55" cy="19" r="1.8" fill="#1B1B2F"/>
+    <path d="M44 24 Q50 28 56 24" stroke="#1B1B2F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <span class="word">
+    <span class="study">study</span>
+    <span class="buddy">buddy</span>
+  </span>
+
+</div></h2>
+
+
+<button id="explainBtn">Explain</button>
+
+<button id="summarizeBtn">Summarize</button>
+
+<button id="quizBtn">Quiz</button>
+
+<button id="flashcardsBtn">Flashcards</button>
+
+<button id="clearHistory">
+
+Clear History
+
+</button>
+
+<button id="themeBtn">
+🌙 Dark Mode
+</button>
+
+<div id="pinnedContainer"></div>
+
+<h3 class="history-title">Chats</h3>
+
+<input id="searchHistory"
+placeholder="Search History">
+
+<div id="history"></div>
+
+
+<h3 class="history-title"></h3>
+
+
+
+</div>
+
+
+
+
+<div class="main">
+
+
+<h1>
+
+<div class="sb-logo">
+  <svg width="44" height="44" viewBox="0 0 100 100" role="img" aria-label="Study Buddy logo">
+    <path d="M50 30 C 30 28, 12 40, 10 58 C 14 74, 32 80, 50 78 Z" fill="#4C5FD5"/>
+    <path d="M50 30 C 70 28, 88 40, 90 58 C 86 74, 68 80, 50 78 Z" fill="#3848B0"/>
+    <line x1="50" y1="30" x2="50" y2="78" stroke="#1B1B2F" stroke-width="2"/>
+    <circle cx="50" cy="20" r="13" fill="#FFB648"/>
+    <circle cx="45" cy="19" r="1.8" fill="#1B1B2F"/>
+    <circle cx="55" cy="19" r="1.8" fill="#1B1B2F"/>
+    <path d="M44 24 Q50 28 56 24" stroke="#1B1B2F" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  </svg>
+
+  <span class="word">
+    <span class="study">study</span>
+    <span class="buddy">buddy</span>
+  </span>
+
+</div>
+
+</h1>
+
+
+
+<textarea id="prompt"
+placeholder="How can I help you today?">
+</textarea>
+
+
+
+<button class="ask"
+
+id="askButton">
+
+Ask AI
+
+</button>
+
+
+<input type="file" id="fileInput" hidden>
+
+<button id="uploadBtn">
+📁 Upload File
+</button>
+
+
+
+<button id="micBtn">🎤</button>
+
+
+<div class="response">
+
+<button id="copyBtn">
+
+Copy
+
+</button>
+
+<button id="downloadBtn">
+
+Download
+
+</button>
+
+<button id="pdfBtn">
+
+PDF
+
+</button>
+
+<button id="speakBtn">Speak</button>
+
+<br>
+<br>
+<br>
+
+<div id="response">
+
+AI Response Here
+
+</div>
+
+
+
+
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="{{ url_for('static',filename='script.js') }}"></script>
+
+<div id="deleteModal" class="modal">
+
+<div class="modal-box">
+
+<h3>Delete Chat?</h3>
+
+<p>This chat will be permanently removed.</p>
+
+<button id="cancelDelete">Cancel</button>
+
+<button id="confirmDelete">Delete</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
